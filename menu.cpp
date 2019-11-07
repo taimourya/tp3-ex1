@@ -1,12 +1,16 @@
 #include <iostream>
+#include <stdlib.h>
 #include "liste.h"
 
 int choix_menu()
 {
     int choix;
+    system("cls");
+    std::cout << "***************" << std::endl;
     std::cout << "1 : saisi." << std::endl;
     std::cout << "2 : afficher." << std::endl;
     std::cout << "3 : exit." << std::endl;
+    std::cout << "***************" <<  std::endl;
     std::cin >> choix;
     return choix;
 }
@@ -21,7 +25,6 @@ void menu()
     while(choix != 3)
     {
         choix = choix_menu();
-        std::cout << "***************" << std::endl;
         switch(choix)
         {
             case 1:
@@ -33,6 +36,7 @@ void menu()
                 rechercher_liste(emp, nom);
                 break;
         }
-        std::cout << "***************" <<  std::endl;
+        if(choix!=3)
+            system("PAUSE");
     }
 }
